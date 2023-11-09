@@ -1,0 +1,12 @@
+---
+title: "CrabsTutorial"
+author: "Patrick Reilly"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+This R package is used to process data from the crabs dataset. You can perform linear models, remove NA values, sort by modern data, and manipulate the crabs data set in many ways using this R package.

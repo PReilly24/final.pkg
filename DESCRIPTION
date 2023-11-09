@@ -1,0 +1,22 @@
+Package: reilly.pkg
+Title: An R package for processing data sets
+Version: 0.1
+Authors@R: c(
+  person(given = "Patrick",
+          family = "Reilly",
+          role = c("cre", "aut"),
+          email = "patrick.reilly@selu.edu")
+          )
+Description: An R package used to perform numerous functions on a data set. Cleaning data, plotting data, and running models on your data is all possible using this package.
+License: MIT + file LICENSE
+Dependents:
+  R (>= 2.10)
+Imports: 
+  tidyverse, broom
+RoxygenNote: 7.1.1
+Suggests:
+  knitr,
+  rmarkdown
+VignetteBuilder: knitr
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
