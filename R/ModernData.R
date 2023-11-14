@@ -1,1 +1,0 @@
-#This function will sort data into anything that was recorded after a certain time (maybe only data from 2010-present)

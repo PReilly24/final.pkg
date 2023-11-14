@@ -4,7 +4,7 @@
 #' Returns the answer as a statement.
 #'
 #' @param number Any input by the user. Does not have to be a numeric value.
-#' @return Either "THIS IS INDEED A NUMBER" or "THIS IS NOT A NUMBER. TRY AGAIN." Only two returns.
+#' @return Either "THIS IS INDEED A NUMBER" or "THIS IS NOT A NUMBER. TRY AGAIN." These are the only two returns.
 #'
 #' @export
 
