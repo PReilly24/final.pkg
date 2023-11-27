@@ -10,9 +10,9 @@ DataClean(data_set)
 \item{data_set}{A data set inputted by the user. Presumably a data set that contains NA values.}
 }
 \value{
-cleaned_Data This is the data set with removed NA values.
+clean This is the data set with removed NA values. Returns a statement if there are no NA values.
 }
 \description{
 Uses a single data set input, then uses the "na.omit" function to remove NA values.
-Returns the data set with removed NA values.
+Returns the data set with removed NA values. Returns a statement if there are no NA values.
 }

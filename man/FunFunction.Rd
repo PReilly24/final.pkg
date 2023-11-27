@@ -2,17 +2,19 @@
 % Please edit documentation in R/ForFunFunction.R
 \name{FunFunction}
 \alias{FunFunction}
-\title{Find out if an input is a number or not}
+\title{Find the sum of a column if the value is greater than 6500.}
 \usage{
-FunFunction(number)
+FunFunction(data, column)
 }
 \arguments{
-\item{number}{Any input by the user. Does not have to be a numeric value.}
+\item{data}{A data set input by the user. In this case, it would be the crabs data set.}
+
+\item{column}{A column contained in the inputted data set. For a numeric output, the column must contain numeric values.}
 }
 \value{
-Either "THIS IS INDEED A NUMBER" or "THIS IS NOT A NUMBER. TRY AGAIN." These are the only two returns.
+total The sum of all values in the inputted column. If this return is not possible, a message will be displayed.
 }
 \description{
-Uses a single input and determines whether or not the input is a numeric value or not.
-Returns the answer as a statement.
+Uses the input of a data set and a specific column to find its sum only if it is larger than 6500.
+Returns the answer a numeric value if the sum is greater than 6500. If the sum is smaller than 6500, a message is returned.
 }
