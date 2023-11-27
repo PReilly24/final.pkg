@@ -33,7 +33,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">reilly.pkg</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.0</span>
       </span>
     </div>
 
@@ -72,7 +72,7 @@
                         <h4 data-toc-skip class="author">Patrick
 Reilly</h4>
             
-            <h4 data-toc-skip class="date">2023-11-14</h4>
+            <h4 data-toc-skip class="date">2023-11-27</h4>
       
       
       <div class="hidden name"><code>CrabsTutorial.Rmd</code></div>
@@ -81,32 +81,70 @@ Reilly</h4>
 
     
     
-<p>This R package is used to process data from the crabs data set.</p>
+<p>Install the package using the code below.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"PReilly24/final.pkg"</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## Using github PAT from envvar GITHUB_PAT</span></span></code></pre>
 <pre><code><span><span class="co">## Downloading GitHub repo PReilly24/final.pkg@HEAD</span></span></code></pre>
-<pre><code><span><span class="co">## </span></span>
-<span><span class="co">## <span style="color: #00BBBB;">──</span> <span style="color: #00BBBB;">R CMD build</span> <span style="color: #00BBBB;">─────────────────────────────────────────────────────────────────</span></span></span>
-<span><span class="co">## * checking for file ‘/tmp/Rtmpgrp752/remotes3d11fef1be9/PReilly24-final.pkg-b143065/DESCRIPTION’ ... OK</span></span>
+<pre><code><span><span class="co">## stringi (1.7.12 -&gt; 1.8.2) [CRAN]</span></span>
+<span><span class="co">## stringr (1.5.0  -&gt; 1.5.1) [CRAN]</span></span>
+<span><span class="co">## dplyr   (1.1.3  -&gt; 1.1.4) [CRAN]</span></span>
+<span><span class="co">## tinytex (0.48   -&gt; 0.49 ) [CRAN]</span></span>
+<span><span class="co">## bslib   (0.5.1  -&gt; 0.6.0) [CRAN]</span></span></code></pre>
+<pre><code><span><span class="co">## Installing 5 packages: stringi, stringr, dplyr, tinytex, bslib</span></span></code></pre>
+<pre><code><span><span class="co">## Installing packages into '/tmp/Rtmp53hyG3/temp_libpath2024871a760'</span></span>
+<span><span class="co">## (as 'lib' is unspecified)</span></span></code></pre>
+<pre><code><span><span class="co">## <span style="color: #00BBBB;">──</span> <span style="color: #00BBBB;">R CMD build</span> <span style="color: #00BBBB;">─────────────────────────────────────────────────────────────────</span></span></span>
+<span><span class="co">## * checking for file ‘/tmp/RtmpqfrhpQ/remotes6a575f5e57f/PReilly24-final.pkg-b16b38c/DESCRIPTION’ ... OK</span></span>
 <span><span class="co">## * preparing ‘reilly.pkg’:</span></span>
 <span><span class="co">## * checking DESCRIPTION meta-information ... OK</span></span>
 <span><span class="co">## * checking for LF line-endings in source and make files and shell scripts</span></span>
 <span><span class="co">## * checking for empty or unneeded directories</span></span>
-<span><span class="co">## * building ‘reilly.pkg_0.1.tar.gz’</span></span>
+<span><span class="co">## * building ‘reilly.pkg_1.0.tar.gz’</span></span>
 <span><span class="co">## Warning: invalid uid value replaced by that for user 'nobody'</span></span></code></pre>
-<pre><code><span><span class="co">## Installing package into '/tmp/Rtmp7SHJx7/temp_libpath12f206d1b1a'</span></span>
+<pre><code><span><span class="co">## Installing package into '/tmp/Rtmp53hyG3/temp_libpath2024871a760'</span></span>
 <span><span class="co">## (as 'lib' is unspecified)</span></span></code></pre>
-<p>In this tutorial, we will be using the crabs data set.</p>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<p>In this tutorial, we will be using the crabs data set. Use the code
+below to install the crabs data set.</p>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">#install.packages("googlesheets4")</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://googlesheets4.tidyverse.org" class="external-link">googlesheets4</a></span><span class="op">)</span></span>
 <span><span class="fu">googlesheets4</span><span class="fu">::</span><span class="fu"><a href="https://googlesheets4.tidyverse.org/reference/gs4_deauth.html" class="external-link">gs4_deauth</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="va">crabs</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://googlesheets4.tidyverse.org/reference/range_read.html" class="external-link">read_sheet</a></span><span class="op">(</span><span class="st">"https://docs.google.com/spreadsheets/d/1iVCw0iGWDRlm5Ktyh_O3YQxS9nL1RfbCTyOsOjeY8M4/edit?usp=sharing"</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## <span style="color: #00BB00;">✔</span> Reading from <span style="color: #00BBBB;">crabs</span>.</span></span></code></pre>
 <pre><code><span><span class="co">## <span style="color: #00BB00;">✔</span> Range '<span style="color: #BBBB00;">crabs (1)</span>'.</span></span></code></pre>
-<p>You can perform linear models, remove NA values, sort by modern data,
-and manipulate the crabs data set in many ways using this R package.</p>
+<p>#Function 1: Cleaning Data with DataClean</p>
+<p>This function is used to remove NA values from the crabs data set.
+This is useful for preparing the data set to be used in other ways that
+require NA values to be gone. Here is an example of how to use this
+function:</p>
+<p>DataClean(crabs)</p>
+<p>#Function 2: Making a Linear Model with lm_function</p>
+<p>This function is used to create a linear model of two or more
+variables. If you suspect that one variable may have an impact on the
+value of another variable, this is a very useful function to test your
+hypothesis. Here is an example of how to use the function:</p>
+<p>lm_function(crabs, “carapace_width”, “frontal_lobe”)</p>
+<p>#Function 3: Making a Scatter Plot with ScatterPlot</p>
+<p>This function is used to create a scatter plot of two variables. This
+function would likely be used before making a linear model to see if two
+variables have a linear relationship when plotted. Once again, this
+function is very useful in testing a hypothesis you may have. Her is an
+example of how to use the function:</p>
+<p>ScatterPlot(“frontal_lobe”, “carapace_width”, crabs)</p>
+<p>#Function 4: Making a New Column with RatioCol</p>
+<p>This function is used to create and display a new column. The newly
+made column will be the quotient of two variables that you choose. This
+could be helpful for creating a ratio between two variables that you may
+want to manipulate in different ways later. Her is an example of how to
+use the function:</p>
+<p>RatioCol(crabs, “carapace_width”, “frontal_lobe”)</p>
+<p>#Function 5: Having Fun with FunFunction?</p>
+<p>This function is used to see if the sum of a column is greater than
+6500 or not. There is very little practical use to this function, as it
+was mainly created to aid in the development of this R packages other
+functions. Here is an example of how to use the function:</p>
+<p>FunFunction(crabs, “frontal_lobe”)</p>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
