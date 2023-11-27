@@ -2,3 +2,6 @@
 
 export(DataClean)
 export(FunFunction)
+export(RatioCol)
+export(ScatterPlot)
+export(lm_function)
