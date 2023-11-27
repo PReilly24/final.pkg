@@ -1,6 +1,6 @@
 Package: reilly.pkg
 Title: An R package for processing data sets
-Version: 0.1
+Version: 1.0
 Authors@R: c(
   person(given = "Patrick",
           family = "Reilly",

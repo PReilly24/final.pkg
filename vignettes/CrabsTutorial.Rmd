@@ -9,4 +9,70 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-This R package is used to process data from the crabs dataset. You can perform linear models, remove NA values, sort by modern data, and manipulate the crabs data set in many ways using this R package.
+Install the package using the code below.
+
+```{r}
+
+devtools::install_github("PReilly24/final.pkg")
+
+```
+
+In this tutorial, we will be using the crabs data set. Use the code below to install the crabs data set.
+
+```{r}
+#install.packages("googlesheets4")
+library(googlesheets4)
+googlesheets4::gs4_deauth()
+crabs <- read_sheet("https://docs.google.com/spreadsheets/d/1iVCw0iGWDRlm5Ktyh_O3YQxS9nL1RfbCTyOsOjeY8M4/edit?usp=sharing")
+
+```
+
+#Function 1: Cleaning Data with DataClean
+
+This function is used to remove NA values from the crabs data set. This is useful for preparing the data set to be used in other ways that require NA values to be gone. Here is an example of how to use this function:
+
+```{r}
+
+DataClean(crabs)
+
+```
+
+#Function 2: Making a Linear Model with lm_function
+
+This function is used to create a linear model of two or more variables. If you suspect that one variable may have an impact on the value of another variable, this is a very useful function to test your hypothesis. Here is an example of how to use the function:
+
+```{r}
+
+lm_function(crabs, "carapace_width", "frontal_lobe")
+
+```
+
+#Function 3: Making a Scatter Plot with ScatterPlot
+
+This function is used to create a scatter plot of two variables. This function would likely be used before making a linear model to see if two variables have a linear relationship when plotted. Once again, this function is very useful in testing a hypothesis you may have. Her is an example of how to use the function:
+
+```{r}
+
+ScatterPlot("frontal_lobe", "carapace_width", crabs)
+
+```
+
+#Function 4: Making a New Column with RatioCol
+
+This function is used to create and display a new column. The newly made column will be the quotient of two variables that you choose. This could be helpful for creating a ratio between two variables that you may want to manipulate in different ways later. Her is an example of how to use the function:
+
+```{r}
+
+RatioCol(crabs, "carapace_width", "frontal_lobe")
+
+```
+
+#Function 5: Having Fun with FunFunction?
+
+This function is used to see if the sum of a column is greater than 6500 or not. There is very little practical use to this function, as it was mainly created to aid in the development of this R packages other functions. Here is an example of how to use the function:
+
+```{r}
+
+FunFunction(crabs, "frontal_lobe")
+
+```
